@@ -18,27 +18,29 @@ h1, h2, h3, h4, a, p, label, input, td {
 
 
 
+
+
 /* ////////////////////////////////// */
 /* /////////////////////////////////////// */
 /* /////////////////////////////////////// */
 /* /////////////////////////////////////// */
 
 /* 00205a */
-#posicao-1-ord-sec{
+#posicao-1-ord-sec-comp{
  width: 100%;
  height: 100%;
  display: flex;
  justify-content: center;
 }
 
-#posicao-2-ord-div{
+#posicao-2-ord-div-comp{
     margin: 5rem 6.25rem;
     width: 72rem;
-    height: 45rem;
+    height: 40rem;
 }
 
 
-#posicao-3-ord-tab td{ 
+#posicao-3-ord-tab-comp td{ 
      border-radius: 0.7em;
      background: #F5F5F5;
      display: flex;
@@ -46,22 +48,19 @@ h1, h2, h3, h4, a, p, label, input, td {
      justify-content: space-around;
      height: 6.5rem;
      width: 100%;
-     margin: 0em 0.3em;
+     margin-top: 0.5em;
 }
 
-#posicao-3-ord-tab h4{
-    color: gray;
-}
 
-#posicao-3-ord-tab img{
+#posicao-3-ord-tab-comp img{
     margin-left: 1em;
-    margin-right: 3.1rem;
+    margin-right: 1em;
     width: 124px;
     height: 115px;
 }
 
-.posicao-inf-ord-div{
-    width: 8.5rem;
+.posicao-inf-ord-div-comp{
+    width:11.5rem;
     height: 2.8rem;
     display: flex;
     justify-content: center;
@@ -74,9 +73,9 @@ h1, h2, h3, h4, a, p, label, input, td {
     margin-right: 1rem; 
 }
 
-.posicao-inf-ord-div h3{
+.posicao-inf-ord-div-comp h3{
     font-weight: 300;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 
@@ -94,56 +93,79 @@ h1, h2, h3, h4, a, p, label, input, td {
 
 @media screen and (max-width: 768px) and (min-width:426px){
 
-#posicao-2-ord-div{
-    margin: 1rem 1rem;
+#posicao-2-ord-div-comp{
+    margin: 1em 1em;
     width: 46.0625rem;        
 }
 
-#posicao-3-ord-tab td{
-font-size: 0.7em;
+#posicao-3-ord-tab-comp td{
+font-size: 1em;
 }
 
+.posicao-5-ord-par-comp {
+    font-size: 0.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}   
+
+
 }
 
 
 
 
-@media screen and (max-width: 425px) and (min-width:100px){
-    #posicao-2-ord-div{
-        width: 20rem;
-        margin: 0em 0em;
+@media screen and (max-width: 425px) and (min-width:50px){
+    #posicao-2-ord-div-comp{
+        width: 100%;
+        margin: 0;
     }
 
-    #posicao-3-ord-tab{
+    #posicao-3-ord-tab-comp{
         margin: 0em;
         height: 5rem;
         align-items: center;
     }
 
-    #posicao-3-ord-tab td{
+    #posicao-3-ord-tab-comp td{
         margin: 0;
-    }
-
-    #posicao-3-ord-tab h4{
-        font-size: 0.4em;
     }
     
 
-    #posicao-3-ord-tab img{
-       margin: 0em;
+    #posicao-3-ord-tab-comp img{
+       margin: 0;
         width: 100px;
     }
 
-    .posicao-inf-ord-div{
-
-        font-size: 0.3em;
-        padding: 0.2;
+    .posicao-inf-ord-div-comp{
+        font-size: 1.2em;
+        padding: 0.3em;
+        margin: 0em 0.5em;
         width: 5em;
-        height: 4em;
+        height: 3em;
     }
 
-    td{
+    #posicao-3-ord-tab-comp td{
         margin: 0;
+        width: 30rem;
+    }
+
+    img{
+        width: 115px;
+        height: 110px;
+    }
+
+    
+    .posicao-5-ord-par-comp{
+    line-height: 1em;
+    width: 40%;
+    height: 40%;
+}
+    p{
+        font-size: 1.1em;
+        /* overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap */
+
     }
 
 }

@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import '../assets/css/historicoCompras.css';
 import prda from '../assets/img/download_-1.png';
+import Rodape from '../componentes/Rodape';
 
 
-class HistoricoCompras extends Component{
+class comporicoCompras extends Component{
 
     render(){
 
@@ -14,109 +15,77 @@ class HistoricoCompras extends Component{
 
 <body>
     <main>
-
-        <sec id="posicao-1-ord-sec">
-            <div id="posicao-2-ord-div">
-
-                <table id="posicao-3-ord-tab" style={{ width:"100%", height:"7rem" }}>
+        <sec id="posicao-1-ord-sec-comp">
+            <div id="posicao-2-ord-div-comp">
+                <table id="posicao-3-ord-tab-comp" style={{width:"100%", height:"7rem"} }>
                     <tbody>
                     
+                        <tr>
+                            <td style= {{ backgroundColor: "white", marginBottom: "1.5em",     marginTop: "1.5em",
+                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"center", flexDirection:"column", color: "##005DFF", fontweight: "400", boxshadow: "none"}}>
+                             <h3 style= {{fontSize:"1.6em", textTransform:"uppercase", color: "#00205A"}} >Compras</h3>
+                            <hr style={{background: "#00205A", color: "#AE07FF", padding: "0.1em", width: "12em", margin: "0 auto"}}/>
+
+                            </td>
+                        </tr>
                     
                        <tr>
-                           <td style={{
-                               backgroundColor: "white",     marginBottom: "1.18rem", marginTop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", 
-                         justifyContent: "space-around", color: "gray", fontweight: "400", 
-                         boxshadow: "none"  
-                         }}> 
-                    <h3>Adquirido dia:</h3> <h3>26/11/2019</h3> 
-                    
-                    </td >
+                           <td 
+                           style= {{ backgroundColor: "white", marginbottom: "1.18rem",     margintop: "1.2rem",
+                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"flex-end", color: "gray", fontweight: "400", boxshadow: "none"}}>
+                         <h3>26/11/2019</h3></td>
                        </tr>
                          
                      <tr>
-
-                            <td> <img src={prda}/><h4>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</h4>
-                                <div className="posicao-inf-ord-div">
+                            <td> <img src={prda}/>
+                            <div className="posicao-5-ord-par-comp">
+                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
+                            </div>
+                                <div className="posicao-inf-ord-div-comp">
                                     <h3>R$ 10.000</h3>
                                 </div>
                             </td>
                         </tr>
-                    
 
-                    
-                        <tr>
-                           <td style={{
-                               backgroundColor: "white",     marginBottom: "1.18rem", marginTop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", 
-                         justifyContent: "space-around", color: "gray", fontweight: "400", 
-                         boxshadow: "none"  
-                         }}> 
-                    <h3>Adquirido dia:</h3> <h3>26/11/2019</h3> 
-                    
-                    </td >
+
+
+                        
+                       <tr>
+                           <td 
+                           style= {{ backgroundColor: "white", marginbottom: "1.18rem",     margintop: "1.2rem",
+                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"flex-end", color: "gray", fontweight: "400", boxshadow: "none"}}>
+                         <h3>26/11/2019</h3></td>
                        </tr>
                          
                      <tr>
-
-                            <td> <img src={prda}/><h4>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</h4>
-                                <div className="posicao-inf-ord-div">
+                            <td> <img src={prda}/>
+                            <div className="posicao-5-ord-par-comp">
+                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
+                            </div>
+                                <div className="posicao-inf-ord-div-comp">
                                     <h3>R$ 10.000</h3>
                                 </div>
                             </td>
                         </tr>
-                    
 
-
-
-                    
-                        <tr>
-                           <td style={{
-                               backgroundColor: "white",     marginBottom: "1.18rem", marginTop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", 
-                         justifyContent: "space-around", color: "gray", fontweight: "400", 
-                         boxshadow: "none"  
-                         }}> 
-                    <h3>Adquirido dia:</h3> <h3>26/11/2019</h3> 
-                    
-                    </td >
+                        
+                       <tr>
+                           <td 
+                           style= {{ backgroundColor: "white", marginbottom: "1.18rem",     margintop: "1.2rem",
+                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"flex-end", color: "gray", fontweight: "400", boxshadow: "none"}}>
+                         <h3>26/11/2019</h3></td>
                        </tr>
                          
                      <tr>
-
-                            <td> <img src={prda}/><h4>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</h4>
-                                <div className="posicao-inf-ord-div">
+                            <td> <img src={prda}/>
+                            <div className="posicao-5-ord-par-comp">
+                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
+                            </div>
+                                <div className="posicao-inf-ord-div-comp">
                                     <h3>R$ 10.000</h3>
                                 </div>
                             </td>
                         </tr>
-                    
-
-                    
-                        <tr>
-                           <td style={{
-                               backgroundColor: "white",     marginBottom: "1.18rem", marginTop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", 
-                         justifyContent: "space-around", color: "gray", fontweight: "400", 
-                         boxshadow: "none"  
-                         }}> 
-                    <h3>Adquirido dia:</h3> <h3>26/11/2019</h3> 
-                    
-                    </td >
-                       </tr>
-                         
-                     <tr>
-
-                            <td> <img src={prda}/><h4>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</h4>
-                                <div className="posicao-inf-ord-div">
-                                    <h3>R$ 10.000</h3>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                    
-
-                    
 
                   
                     </tbody>
@@ -126,7 +95,14 @@ class HistoricoCompras extends Component{
 
         </sec>
     </main>
-</body>
+    <Rodape/>
+            
+            </body>
+
+
+
+
+
 
 
 
@@ -136,4 +112,4 @@ class HistoricoCompras extends Component{
     }
 }
 
-export default HistoricoCompras;
+export default comporicoCompras;
