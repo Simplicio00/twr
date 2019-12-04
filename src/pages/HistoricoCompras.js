@@ -2,18 +2,20 @@ import React, {Component} from 'react';
 import '../assets/css/historicoCompras.css';
 import prda from '../assets/img/download_-1.png';
 import Rodape from '../componentes/Rodape';
+import Cabecalho from '../componentes/Cabecalho';
 
 
-class comporicoCompras extends Component{
-
+class HistoricoCompras extends Component{
+    
     render(){
-
+        
         return(
-
-<div>
+            
+            <div>
 
 
 <body>
+            <Cabecalho/>
     <main>
         <sec id="posicao-1-ord-sec-comp">
             <div id="posicao-2-ord-div-comp">
@@ -105,11 +107,10 @@ class comporicoCompras extends Component{
 
 
 
-
             </div>
 
         )
     }
 }
 
-export default comporicoCompras;
+export default HistoricoCompras;

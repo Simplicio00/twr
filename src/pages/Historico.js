@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import '../assets/css/historico.css';
 import prdt from '../assets/img/download_-1.png';
+import Rodape from '../componentes/Rodape';
+import Cabecalho from '../componentes/Cabecalho';
 
 
 class Historico extends Component{
@@ -9,10 +11,10 @@ class Historico extends Component{
         return(
 
 <div>
-
 <body>
-    <main>
-        <sec id="posicao-1-ord-sec-hist">
+    <Cabecalho/>
+<main>
+<sec id="posicao-1-ord-sec-hist">
             <div id="posicao-2-ord-div-hist">
                 <table id="posicao-3-ord-tab-hist" style={{width:"100%", height:"7rem"} }>
                     <tbody>
@@ -83,8 +85,6 @@ class Historico extends Component{
                                 </div>
                             </td>
                         </tr>
-
-                  
                     </tbody>
                 </table>
 
@@ -92,8 +92,10 @@ class Historico extends Component{
 
         </sec>
     </main>
+    <Rodape/>
             
             </body>
+
             </div>
         )
     }

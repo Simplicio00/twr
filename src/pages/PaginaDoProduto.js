@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../assets/css/PaginaDoProduto.css'
 import prdtt from '../assets/img/macbook.png'
+import Rodape from '../componentes/Rodape';
 
 
 
@@ -138,7 +139,7 @@ class PaginaDoProduto extends Component{
            </div>
        </section>
    </main>
-
+    <Rodape/>
 </body>
 
 

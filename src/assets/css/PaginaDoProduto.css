@@ -8,13 +8,13 @@
 .cabecalho{
     width:100%;
     height:15vh;
-    background: #005DFF;
+    /* background: #005DFF; */
 }
 
 .rodape{
     width: 100%;
     height: 15vh;
-    background: rgb(29, 77, 51);
+    /* background: rgb(29, 77, 51); */
 }
 a, p, label, input, td{
     font-family: 'Segoe UI', sans-serif;
@@ -404,12 +404,12 @@ body{
     .cabecalho{
         width:100%;
         height:15vh;
-        background: rgb(15, 171, 199);
+        /* background: rgb(15, 171, 199); */
     }
     .rodape{
         width: 100%;
         height: 20vh;
-        background: rgb(251, 255, 37);
+        /* background: rgb(251, 255, 37); */
         clear: inherit;
     }
 
