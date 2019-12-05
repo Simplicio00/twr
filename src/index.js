@@ -7,18 +7,63 @@ import Historico from './pages/Historico';
 import HistoricoCompras from './pages/HistoricoCompras';
 import PaginaDoProduto from './pages/PaginaDoProduto';
 import Apresentacao from './pages/Apresentacao';
-import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import { usuarioAutenticado, parseJwt } from './services/auth';
+
+
+
+
+
+
+
+const AdminAuth = ({ component : Component }) => (
+    <Route
+    render = {
+        props => usuarioAutenticado() 
+        && parseJwt().Role === 'Administrador' ? ( 
+    < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
+}
+/>
+)
+
+const ContriAuth = ({ component : Component }) => (
+    <Route
+    render = {
+        props => usuarioAutenticado() 
+        && parseJwt().Role === 'Comum' ? ( 
+    < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
+}
+/>
+)
+
+
+
+
+
+
+
+
+
 
 const Rota = (
     <Router>
         <div>
+
+         {/* headers : {
+         "Content-type" : "application/json",
+         'Authorization' : 'Bearer' + localStorage.getItem('autenticar')
+         } */}
+
+            
             <Switch>
-                <Route exact path ='/' component={Home}/>
-                <Route path='/Historico' component= {Historico}/>
-                <Route path='/Historico de compras' component={HistoricoCompras}/>
-                <Route path='/Produto' component={PaginaDoProduto}/>                
+                <ContriAuth exact path ='/' component={Home}/>
+                <ContriAuth path='/Historico' component= {Historico}/>
+                <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
+                <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
                 <Route path='/Apresentacao' component={Apresentacao}/> 
+                <Route path='/Cadastro' component={Cadastro} />  
                 <Route path='/Login' component={Login} />               
             </Switch>
         </div>

@@ -6,9 +6,9 @@ import Cabecalho from '../componentes/Cabecalho';
 
 
 class HistoricoCompras extends Component{
-    
+
+  
     render(){
-        
         return(
             
             <div>

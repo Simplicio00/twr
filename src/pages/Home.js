@@ -7,6 +7,33 @@ import pd3 from '../assets/img/dollar-symbol.png';
 
 
 class Home extends Component{
+
+    constructor(props){
+      super(props);
+        this.state ={
+          listaUsuarios : [],
+          loading : false
+        }
+      }
+
+    
+    //   this.buscarUsuario = this.buscarUsuario.bind(this);
+
+
+    //   buscarUsuario(){
+    //     this.buscarUsuario({loading : true});
+
+    //     fetch('https://localhost:5001/api/Usuario')
+    //     .then(resposta => resposta.json())
+    //     .then(data => {
+    //       this.setState({ listaUsuarios : data})
+
+    //       this.setState({loading : false});
+    //     })
+    //     .catch(erro) => console.log(erro))
+    //   }
+      
+
     render(){
         return(
 <div>
@@ -351,5 +378,6 @@ class Home extends Component{
             </div>
         )
     }
-}
+  }
+
 export default Home;
