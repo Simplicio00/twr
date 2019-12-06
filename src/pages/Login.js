@@ -33,12 +33,11 @@ class Login extends Component{
         var base64 = localStorage.getItem('autenticar').split('.')[1];
 
         console.log(parseJwt().Role)
-        window.location.href ="../Apresentacao"
+        window.location.href ="../"
         if (parseJwt().Role === 'Administrador') {
-          this.props.history.push('./')
-
+          this.props.history.push('./DashUsuario')
         }else{
-          this.props.history.push('/home')
+          this.props.history.push('/')
         }
 
       }})

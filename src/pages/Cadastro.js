@@ -66,7 +66,7 @@ class Cadastro extends Component{
         .then(resposta => {
             if (resposta.status === 200) {
                 console.log('Cadastro de usuário concluído com sucesso') 
-                window.location.href ="../login"
+                window.location.href ="../Bem vindo"
             }
         })
     }
@@ -85,8 +85,8 @@ class Cadastro extends Component{
             <section id="conteudo-2-login">
 
                 <div id="titulo-3-login">
-                    <h1>Lo</h1>
-                    <h1>gin</h1>
+                    <h1>Cadastro</h1>
+                  
                 </div>
                 <section id="conteudo-3-login">
 

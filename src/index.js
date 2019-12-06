@@ -11,6 +11,7 @@ import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import DashboardUsuario from './pages/DashboardUsuario';
+import Confirmacao from './pages/ConfirmacaoCadastro';
 import { usuarioAutenticado, parseJwt } from './services/auth';
 
 
@@ -64,7 +65,8 @@ const Rota = (
                 <ContriAuth path='/Apresentacao' component={Apresentacao}/> 
                 <AdminAuth path='/DashUsuario' component={DashboardUsuario} />
                 <Route path='/Cadastro' component={Cadastro} />  
-                <Route path='/Login' component={Login} />               
+                <Route path='/Bem vindo' component={Confirmacao} />               
+                <Route path='/Login' component={Login} />
             </Switch>
         </div>
     </Router>

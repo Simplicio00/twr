@@ -20,6 +20,9 @@ class Aprensatacao extends Component{
                 <img class="imagem_logo_apresentacao" src={img1} alt="logo do site new time em tons azulado"/>
                 <h1 id="apresentacao-logo">NewTime Logo</h1> 
             </a>
+            <ul id="ul-apresentacao"> 
+                <a href="/"> <button class="button-apresentacao-nt"><span>Entrar</span></button></a> 
+            </ul>
         </nav> 
     </header> 
     
