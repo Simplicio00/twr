@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Link } from "react-router-dom";
+
+
+
+
 
 
 
@@ -60,11 +65,11 @@ class Cadastro extends Component{
         
         .then(resposta => {
             if (resposta.status === 200) {
-                console.log('Cadastro de usuário concluído com sucesso');
+                console.log('Cadastro de usuário concluído com sucesso') 
+                window.location.href ="../login"
             }
         })
     }
-
 
     render(){
         return(
@@ -113,7 +118,10 @@ class Cadastro extends Component{
                             value={this.state.senha}
                             onChange={this.atualizaEstadoSenha}
                             />
-                            <button type="submit" onClick="cadastrarUsuario()" id="entrar-5-login">Entrar</button>
+
+
+                            <button type="submit"  onClick="cadastrarUsuario()" id="entrar-5-login"  > <Link to="/pages/login"> Entrar</Link></button>
+
                         </form>
                         <div class="opcoes-fim2-3-login">
                             <ul>

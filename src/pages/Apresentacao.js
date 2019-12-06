@@ -16,13 +16,10 @@ class Aprensatacao extends Component{
 
     <header id="topo-apresentacao"> 
         <nav class="menu-apresentacao">
-            <a href="#">
+            <a href="/">
                 <img class="imagem_logo_apresentacao" src={img1} alt="logo do site new time em tons azulado"/>
                 <h1 id="apresentacao-logo">NewTime Logo</h1> 
             </a>
-            <ul id="ul-apresentacao"> 
-                <button class="button-apresentacao-nt"><span>Entrar</span></button> 
-            </ul> 
         </nav> 
     </header> 
     

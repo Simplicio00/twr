@@ -10,6 +10,7 @@ import Apresentacao from './pages/Apresentacao';
 import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import DashboardUsuario from './pages/DashboardUsuario';
 import { usuarioAutenticado, parseJwt } from './services/auth';
 
 
@@ -45,8 +46,6 @@ const ContriAuth = ({ component : Component }) => (
 
 
 
-
-
 const Rota = (
     <Router>
         <div>
@@ -62,7 +61,8 @@ const Rota = (
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
-                <Route path='/Apresentacao' component={Apresentacao}/> 
+                <ContriAuth path='/Apresentacao' component={Apresentacao}/> 
+                <AdminAuth path='/DashUsuario' component={DashboardUsuario} />
                 <Route path='/Cadastro' component={Cadastro} />  
                 <Route path='/Login' component={Login} />               
             </Switch>
