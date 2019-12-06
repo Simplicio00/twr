@@ -41,7 +41,7 @@ class HistoricoCompras extends Component{
                      <tr>
                             <td> <img src={prda}/>
                             <div className="posicao-5-ord-par-comp">
-                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
+                                <p style={{color:"black"}}>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
                             </div>
                                 <div className="posicao-inf-ord-div-comp">
                                     <h3>R$ 10.000</h3>
@@ -50,44 +50,6 @@ class HistoricoCompras extends Component{
                         </tr>
 
 
-
-                        
-                       <tr>
-                           <td 
-                           style= {{ backgroundColor: "white", marginbottom: "1.18rem",     margintop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"flex-end", color: "gray", fontweight: "400", boxshadow: "none"}}>
-                         <h3>26/11/2019</h3></td>
-                       </tr>
-                         
-                     <tr>
-                            <td> <img src={prda}/>
-                            <div className="posicao-5-ord-par-comp">
-                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
-                            </div>
-                                <div className="posicao-inf-ord-div-comp">
-                                    <h3>R$ 10.000</h3>
-                                </div>
-                            </td>
-                        </tr>
-
-                        
-                       <tr>
-                           <td 
-                           style= {{ backgroundColor: "white", marginbottom: "1.18rem",     margintop: "1.2rem",
-                         width: "100%", height: "1.5rem", display: "flex", justifyContent:"flex-end", color: "gray", fontweight: "400", boxshadow: "none"}}>
-                         <h3>26/11/2019</h3></td>
-                       </tr>
-                         
-                     <tr>
-                            <td> <img src={prda}/>
-                            <div className="posicao-5-ord-par-comp">
-                                <p>MacBook MF855BZ/A Intel Core M Dual Core 12 8GB 256GB Prata - Apple</p>
-                            </div>
-                                <div className="posicao-inf-ord-div-comp">
-                                    <h3>R$ 10.000</h3>
-                                </div>
-                            </td>
-                        </tr>
 
                   
                     </tbody>

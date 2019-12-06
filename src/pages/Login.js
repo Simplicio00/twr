@@ -33,7 +33,7 @@ class Login extends Component{
         var base64 = localStorage.getItem('autenticar').split('.')[1];
 
         console.log(parseJwt().Role)
-        window.location.href ="../"
+        // window.location.href ="/"
         if (parseJwt().Role === 'Administrador') {
           this.props.history.push('./DashUsuario')
         }else{

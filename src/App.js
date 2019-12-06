@@ -4,6 +4,7 @@ import img from './assets/img/macbook.png';
 import pd1 from './assets/img/buffer.png';
 import pd2 from './assets/img/laptop.png';
 import pd3 from './assets/img/dollar-symbol.png';
+import Cabecalho from './componentes/Cabecalho';
 
 
 
@@ -12,6 +13,8 @@ function App() {
   return (
     
     <div>
+
+      <Cabecalho/>
 
     <body>
   

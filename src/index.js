@@ -62,10 +62,10 @@ const Rota = (
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
-                <ContriAuth path='/Apresentacao' component={Apresentacao}/> 
                 <AdminAuth path='/DashUsuario' component={DashboardUsuario} />
                 <Route path='/Cadastro' component={Cadastro} />  
                 <Route path='/Bem vindo' component={Confirmacao} />               
+                <Route path='/Apresentacao' component={Apresentacao}/> 
                 <Route path='/Login' component={Login} />
             </Switch>
         </div>

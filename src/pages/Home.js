@@ -4,6 +4,8 @@ import img from '../assets/img/macbook.png';
 import pd1 from '../assets/img/buffer.png';
 import pd2 from '../assets/img/laptop.png';
 import pd3 from '../assets/img/dollar-symbol.png';
+import Cabecalho from '../componentes/Cabecalho';
+import Rodape from '../componentes/Rodape';
 
 
 class Home extends Component{
@@ -17,28 +19,13 @@ class Home extends Component{
       }
 
     
-    //   this.buscarUsuario = this.buscarUsuario.bind(this);
-
-
-    //   buscarUsuario(){
-    //     this.buscarUsuario({loading : true});
-
-    //     fetch('https://localhost:5001/api/Usuario')
-    //     .then(resposta => resposta.json())
-    //     .then(data => {
-    //       this.setState({ listaUsuarios : data})
-
-    //       this.setState({loading : false});
-    //     })
-    //     .catch(erro) => console.log(erro))
-    //   }
-      
 
     render(){
         return(
 <div>
 
 <body>
+  <Cabecalho/>
 
 <section className="banner-home">
 <div className="imagem-banner-home">              </div>
@@ -371,6 +358,7 @@ class Home extends Component{
   </div>
 </section>
 </main>
+  <Rodape/>
 
 </body>
 

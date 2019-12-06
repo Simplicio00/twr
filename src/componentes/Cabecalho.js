@@ -12,7 +12,7 @@ function Cabecalho(){
     <header class="cabecalho">
         <nav class="nav_menu">
             <div class="nav_menu_img">
-                <img src={img1} alt=""/>
+                <a href="/"><img src={img1} alt=""/></a>
             </div>
 
             <form action="#" method="GET">
@@ -21,8 +21,8 @@ function Cabecalho(){
             </form>
             <div class="nav_menu_items">
                 <ul>
-                    <li><a>Interesses</a></li>
-                    <li><a>Compras</a></li>
+                    <li><a href="/Historico">Interesses</a></li>
+                    <li><a href="/Historico de compras">Compras</a></li>
                     <li><a>Sobre</a></li>
                 </ul>
             </div>
