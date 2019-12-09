@@ -21,7 +21,7 @@ body{
 .cabecalho{
     width: 100%;
     height: 200px;
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 .conteudo{
     width: 100%;
@@ -31,7 +31,7 @@ body{
 .rodape {
     width: 100%;
     height: 166px;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     background: #00205A;
     display: flex;
     flex-direction: column;
