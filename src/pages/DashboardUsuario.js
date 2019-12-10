@@ -21,9 +21,6 @@ class DashBoardUsuario extends Component{
             loading : false 
         }
         this.buscarUsuarios.bind(this);
-        // this.atualizaNome = this.atualizaNome.bind(this);
-        // this.atualizaNomeCompleto = this.atualizaNomeCompleto.bind(this);
-        // this.atualizaEmail = this.atualizaEmail.bind(this)
     }
 
 

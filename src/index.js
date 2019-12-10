@@ -10,11 +10,14 @@ import Apresentacao from './pages/Apresentacao';
 import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import DashboardUsuario from './pages/DashboardUsuario';
 import Confirmacao from './pages/ConfirmacaoCadastro';
 import Perfil from './pages/Perfil';
 import alterada from './pages/SenhaAlterada';
+import DashboardUsuario from './pages/DashboardUsuario';
 import DashboardClassificados from './pages/DashboardClassificados';
+import DashboardCadastrarCategoria from './pages/DashboardCadastrarCategoria';
+import DashboardListarCategoria from './pages/DashboardListarCategoria';
+
 
 import { usuarioAutenticado, parseJwt } from './services/auth';
 
@@ -62,19 +65,20 @@ const Rota = (
 
             
             <Switch>
-                <ContriAuth exact path ='/' component={Home}/>
+                <Route exact path ='/' component={Home}/>
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
-                <ContriAuth path='/Perfil' component={Perfil}/>                                
                 <Route path='/DashUsuario' component={DashboardUsuario} />
+                <Route path='/Perfil' component={Perfil}/>                                
                 <Route path='/DashClassificados' component={DashboardClassificados} />
                 <Route path='/Cadastro' component={Cadastro} />  
                 <Route path='/Bem vindo' component={Confirmacao} />               
                 <Route path='/Apresentacao' component={Apresentacao}/> 
                 <Route path='/Login' component={Login} />
                 <Route path='/alteracao concluida' component={alterada} />
-
+                <Route path='/cadastrarCategoria' component={DashboardCadastrarCategoria} />
+                <Route path='/listarCategoria' component={DashboardListarCategoria} />
             </Switch>
         </div>
     </Router>
