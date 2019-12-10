@@ -9,7 +9,6 @@ import Rodape from '../componentes/Rodape';
 
 
 class Home extends Component{
-
     constructor(props){
       super(props);
         this.state ={
@@ -85,18 +84,17 @@ class Home extends Component{
         return(  
 
 <section className="home-inicio-apresentacao">
-  <div className="home-notebook-apresentacao">
-    <div className="home-notebook-box">
-      <div className="home-cards-separacao-notebooks">
+<div className="home-notebook-apresentacao">
+<div className="home-notebook-box">
+<div className="home-cards-separacao-notebooks">
 
-      <div className="home_produto_desk_box_box_card">
-      <div className="home-guardar-notebooks"><img src={img}/></div>
+<div className="home_produto_desk_box_box_card">
+<div className="home-guardar-notebooks"><img src={img}/></div>
 
-
-            <div className="home_produto_desk_box_box_card_bottom">
+<div className="home_produto_desk_box_box_card_bottom">
 
             <div key={Classificado.idClassificado} className="home-descricao-notebooks">
-              {Classificado.avaliacao}
+              {Classificado.idEquipamentoNavigation.nomeEquipamento}
 
 
                                                                              </div>
@@ -107,24 +105,30 @@ class Home extends Component{
       <div className="home-precos-cards-left">
       <div className="home-precos-cards-bottom">
       <div style={{color:"white"}} key={Classificado.idClassificado} className="home-borda-preco-notebooks">
-        {Classificado.preco} 
+        {Classificado.preco}  <br/>
                                                 </div>
                                                 </div>
                                                 </div>
               <div className="home-cards-configuracao-carrinhos">
               <div className="home-produto-interesse-notebook">
               <div className="home-carrinhos-box">
-              <i className="fas fa-shopping-cart"></i>
+              <i className="fas fa-shopping-cart">
+
+                                                </i>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+
+
+
+
                                                 </div>
                                                 </div>
                                                 </div>
                                                 </div>
                                                 </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                            </section>
+                                                </section>
        
         )})}
 </main>

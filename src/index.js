@@ -65,6 +65,7 @@ const Rota = (
 
             
             <Switch>
+
                 <Route exact path ='/' component={Home}/>
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
@@ -79,6 +80,7 @@ const Rota = (
                 <Route path='/alteracao concluida' component={alterada} />
                 <Route path='/cadastrarCategoria' component={DashboardCadastrarCategoria} />
                 <Route path='/listarCategoria' component={DashboardListarCategoria} />
+                
             </Switch>
         </div>
     </Router>

@@ -15,9 +15,6 @@ class DashboardClassificado extends Component{
     render(){
         return(
             <div>
-                
-
-
                 <body style ={{ 
     backgroundImage: "url(" + temaDeFundo + ")",
     backgroundRepeat: "no-repeat",
