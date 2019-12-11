@@ -7,18 +7,49 @@ import img3 from '../assets/img/logout.png';
 import '../assets/script/transition';
 import Cabecalho from '../componentes/Cabecalho';
 import Rodape from '../componentes/Rodape';
+// import { usuarioAutenticado, parseJwt } from '../services/auth';
+// import Axios from 'axios';
+// import { usuarioAutenticado } from '../services/auth';
 
 
 
 class Perfil extends Component {
 
 
-    constructor(props) {
+    constructor(props){
         super(props);
+        this.state = {
+            user : [],
+            nomeUsuario : '',
+            nomeCompleto: '',
+            email: '',
+            loading : false 
+        }
         this.mostrar = this.mostrar.bind(this);
+        this.userLogado = this.userLogado.bind(this);
     }
 
-    mostrar() {
+    userLogado(){
+        this.setState({loading : true});        
+        fetch('https://localhost:5001/api/Usuario/gUser', {     
+        headers: { "Content-Type" : "application/json", 
+        'authorization' : 'Bearer ' + localStorage.getItem('autenticarlogin')}
+        })
+        .then(resposta => resposta.json())
+        .then(data => {
+        this.setState({ user : data })
+        this.setState({ loading : false });
+        })
+        .catch((erro) => console.log(erro))
+        }
+
+
+    componentDidMount(){
+        this.userLogado();
+    }
+
+
+    mostrar(){
         var y = document.getElementById("pord");
         if (y.style.display === "none") {
             y.style.display = "block";
@@ -40,6 +71,7 @@ class Perfil extends Component {
 
 
     render(){
+        console.log(this.state.user.data)
         return(
             <body>
                 <Cabecalho/>
@@ -48,17 +80,25 @@ class Perfil extends Component {
             
         <div id="po-ord-div-2-perf">
 
-            <div id="contorno-style">
-                <div id="po-ord-div-3-flex-perf">
+                {/* {this.state.user.map(function(Usuario){
+                    return( */}
+            <div id="contorno-style" >
+                
+                <div id="po-ord-div-3-flex-perf" >
+                {/* key={Usuario.idUsuario} */}
                     <div id="po-ord-div-4-img-perf"><img src={img0} /></div>
-                    <div id="po-ord-div-4-nome-perf"><p>nome</p></div>
-                    <div id="po-ord-div-4-nomeCompleto-perf"><p>nome completo</p></div>
-                    <div id="po-ord-div-4-email-perf"><p>email</p></div>
+                    <div id="po-ord-div-4-nome-perf">
+                        {/* <p>{Usuario.nomeUsuario}</p> */}
+                        </div>
+                    <div id="po-ord-div-4-nomeCompleto-perf">
+                        {/* <p>{Usuario.nomeCompleto}</p> */}
+                        </div>
+                    <div id="po-ord-div-4-email-perf">
+                        {/* <p>{Usuario.email}</p> */}
+                        </div>
                     <div id="po-ord-div-4-hr-perf"><hr/></div>
                     <div id="pord">
-
                         <div id="pord-div-4-flex-perf">
-
                             <div id="pord-div-5-h3-txt"> <h4>Segurança</h4> <img src={img1} /></div>
                             <div id="pord-div-5-input-perf">
                                 <label for="#">Nova senha</label>
@@ -76,7 +116,11 @@ class Perfil extends Component {
                         <button onClick={this.mostrar}>Alterar senha <div class="btn-img"><img src={img2} /></div></button> <button> Sair <div class="btn-img"><img src={img3}/></div></button>
                     </div>
                 </div>
+
+
+           
             </div>
+                    {/* )})} */}
         </div>
     </section>
 </main>

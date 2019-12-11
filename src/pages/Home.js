@@ -80,12 +80,17 @@ class Home extends Component{
 
 
 <main>
-      {this.state.listaClassificados.map(function(Classificado){
-        return(  
-
 <section className="home-inicio-apresentacao">
+
+
+
+
+
+
 <div className="home-notebook-apresentacao">
 <div className="home-notebook-box">
+      {this.state.listaClassificados.map(function(Classificado){
+        return(  
 <div className="home-cards-separacao-notebooks">
 
 <div className="home_produto_desk_box_box_card">
@@ -125,12 +130,39 @@ class Home extends Component{
 
                                                 </div>
                                                 </div>
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+                                                
+                                                </div>
+)})}
+
+
+
+
+
+
+
+
+      
                                                 </div>
                                                 </div>
-                                                </div>
-                                                </section>
-       
-        )})}
+
+
+
+
+</section>
 </main>
   <Rodape/>
 

@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Confirmacao from './pages/ConfirmacaoCadastro';
 import Perfil from './pages/Perfil';
+import Perfilteste from './pages/Perfilteste';
 import alterada from './pages/SenhaAlterada';
 import DashboardUsuario from './pages/DashboardUsuario';
 import DashboardClassificados from './pages/DashboardClassificados';
@@ -31,7 +32,7 @@ const AdminAuth = ({ component : Component }) => (
     <Route
     render = {
         props => usuarioAutenticado() 
-        && parseJwt().Role === 'Administrador' ? ( 
+        && parseJwt().Roles === 'Administrador' ? ( 
     < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
 }
 />
@@ -41,7 +42,7 @@ const ContriAuth = ({ component : Component }) => (
     <Route
     render = {
         props => usuarioAutenticado() 
-        && parseJwt().Role === 'Comum' ? ( 
+        && parseJwt().Roles === 'Comum' ? ( 
     < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
 }
 />
@@ -70,8 +71,9 @@ const Rota = (
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
+                <ContriAuth path='/Perfil' component={Perfil}/>    
+                <AdminAuth path='/PerfilTeste' component={Perfilteste}/>                                
                 <Route path='/DashUsuario' component={DashboardUsuario} />
-                <Route path='/Perfil' component={Perfil}/>                                
                 <Route path='/DashClassificados' component={DashboardClassificados} />
                 <Route path='/Cadastro' component={Cadastro} />  
                 <Route path='/Bem vindo' component={Confirmacao} />               

@@ -32,9 +32,9 @@ class DashBoardUsuario extends Component{
         this.setState({loading : true});
 
         fetch('https://localhost:5001/api/Usuario', {
-        Headers: {
-        "Content-Type" : "application/json",
-        'Authorization': 'Bearer ' + localStorage.getItem('autenticar')
+        headers: {
+            "Content-Type" : "application/json",
+        'authorization': 'Bearer ' + localStorage.getItem('autenticarlogin')
         }
         })
         .then(resposta => resposta.json())

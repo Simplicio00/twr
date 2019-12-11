@@ -27,14 +27,14 @@ class Login extends Component{
       }).then(data => {
       
         if (data.status === 200){
-        localStorage.setItem('autenticar', data.data.token)
+        localStorage.setItem('autenticarlogin', data.data.token)
         this.setState({isLoading : false});
 
-        var base64 = localStorage.getItem('autenticar').split('.')[1];
+        var base64 = localStorage.getItem('autenticarlogin').split('.')[1];
 
-        console.log(parseJwt().Role)
+        console.log(parseJwt().Roles)
         // window.location.href ="/"
-        if (parseJwt().Role === 'Administrador') {
+        if (parseJwt().Roles === 'Administrador') {
           this.props.history.push('./DashUsuario')
         }else{
           this.props.history.push('/')
