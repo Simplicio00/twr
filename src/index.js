@@ -18,9 +18,10 @@ import DashboardUsuario from './pages/DashboardUsuario';
 import DashboardClassificados from './pages/DashboardClassificados';
 import DashboardCadastrarCategoria from './pages/DashboardCadastrarCategoria';
 import DashboardListarCategoria from './pages/DashboardListarCategoria';
-
-
 import { usuarioAutenticado, parseJwt } from './services/auth';
+
+import DashboardListarCadastrarClassificado from './pages/DashboardCadastrarClassificado';
+
 
 
 
@@ -43,6 +44,16 @@ const ContriAuth = ({ component : Component }) => (
     render = {
         props => usuarioAutenticado() 
         && parseJwt().Roles === 'Comum' ? ( 
+    < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
+}
+/>
+)
+
+const Ambos = ({ component : Component }) => (
+    <Route
+    render = {
+        props => usuarioAutenticado() 
+        && parseJwt().Roles === 'Comum' | parseJwt().Roles === 'Administrador' ? ( 
     < Component {...props} /> ) : ( <Redirect to = {{ pathname : 'login' }}/> )
 }
 />
@@ -71,8 +82,8 @@ const Rota = (
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
-                <ContriAuth path='/Perfil' component={Perfil}/>    
                 <AdminAuth path='/PerfilTeste' component={Perfilteste}/>                                
+                <Ambos path='/Perfil' component={Perfil}/>    
                 <Route path='/DashUsuario' component={DashboardUsuario} />
                 <Route path='/DashClassificados' component={DashboardClassificados} />
                 <Route path='/Cadastro' component={Cadastro} />  
@@ -82,6 +93,8 @@ const Rota = (
                 <Route path='/alteracao concluida' component={alterada} />
                 <Route path='/cadastrarCategoria' component={DashboardCadastrarCategoria} />
                 <Route path='/listarCategoria' component={DashboardListarCategoria} />
+                <Route path='/cadastrarClassificado' component={DashboardListarCadastrarClassificado} />
+
                 
             </Switch>
         </div>

@@ -7,6 +7,8 @@ import img3 from '../assets/img/logout.png';
 import '../assets/script/transition';
 import Cabecalho from '../componentes/Cabecalho';
 import Rodape from '../componentes/Rodape';
+// import {apiFormData} from '../services/auth';
+
 // import { usuarioAutenticado, parseJwt } from '../services/auth';
 // import Axios from 'axios';
 // import { usuarioAutenticado } from '../services/auth';
@@ -19,7 +21,7 @@ class Perfil extends Component {
     constructor(props){
         super(props);
         this.state = {
-            user : [],
+            gUser : [],
             nomeUsuario : '',
             nomeCompleto: '',
             email: '',
@@ -30,14 +32,16 @@ class Perfil extends Component {
     }
 
     userLogado(){
-        this.setState({loading : true});        
+        this.setState({loading : true});   
+        
+       
         fetch('https://localhost:5001/api/Usuario/gUser', {     
         headers: { "Content-Type" : "application/json", 
         'authorization' : 'Bearer ' + localStorage.getItem('autenticarlogin')}
         })
         .then(resposta => resposta.json())
         .then(data => {
-        this.setState({ user : data })
+        this.setState({ gUser : data })
         this.setState({ loading : false });
         })
         .catch((erro) => console.log(erro))
@@ -71,7 +75,7 @@ class Perfil extends Component {
 
 
     render(){
-        console.log(this.state.user.data)
+        console.log(this.state.gUser.data)
         return(
             <body>
                 <Cabecalho/>
@@ -84,17 +88,17 @@ class Perfil extends Component {
                     return( */}
             <div id="contorno-style" >
                 
-                <div id="po-ord-div-3-flex-perf" >
-                {/* key={Usuario.idUsuario} */}
+                <div id="po-ord-div-3-flex-perf" key={this.state.gUser} >
+                
                     <div id="po-ord-div-4-img-perf"><img src={img0} /></div>
                     <div id="po-ord-div-4-nome-perf">
-                        {/* <p>{Usuario.nomeUsuario}</p> */}
+                        {this.state.gUser.nomeUsuario}
                         </div>
                     <div id="po-ord-div-4-nomeCompleto-perf">
-                        {/* <p>{Usuario.nomeCompleto}</p> */}
+                    {this.state.gUser.nomeCompleto}
                         </div>
                     <div id="po-ord-div-4-email-perf">
-                        {/* <p>{Usuario.email}</p> */}
+                    {this.state.gUser.email}
                         </div>
                     <div id="po-ord-div-4-hr-perf"><hr/></div>
                     <div id="pord">

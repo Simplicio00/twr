@@ -12,9 +12,9 @@ class Perfilteste extends Component {
     constructor(props){
         super(props);
         this.state = {
-            user : [],
-            idUsuario : parseInt,
+            gUser : [],
             nomeUsuario : '',
+            nomeCompleto: '',
             loading : false 
         }
         this.userLogado = this.userLogado.bind(this);
@@ -28,7 +28,7 @@ class Perfilteste extends Component {
         })
         .then(resposta => resposta.json())
         .then(data => {
-        this.setState({ user : data })
+        this.setState({ gUser : data })
         this.setState({ loading : false });
         })
         .catch((erro) => console.log(erro))
@@ -42,17 +42,16 @@ class Perfilteste extends Component {
 
 
     render(){
-        console.log(this.state.user)
+        console.log(this.state.gUser)
         return(
             <body>
             <main>
-            {this.state.user.map(Usuario =>{
-                return(
-            <div key={Usuario.idUsuario}>
-                <div><p>{Usuario.nomeUsuario}</p></div>
+            <div key={this.state.gUser}>
+                <div><p>{this.state.gUser.nomeUsuario}</p></div>
+                <div><p>{this.state.gUser.nomeCompleto}</p></div>
+
             </div>
             
-                )})}
             
             </main>
             </body>
