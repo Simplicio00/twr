@@ -31,6 +31,8 @@ class Perfil extends Component {
         this.userLogado = this.userLogado.bind(this);
     }
 
+
+
     userLogado(){
         this.setState({loading : true});   
         
@@ -121,8 +123,6 @@ class Perfil extends Component {
                     </div>
                 </div>
 
-
-           
             </div>
                     {/* )})} */}
         </div>

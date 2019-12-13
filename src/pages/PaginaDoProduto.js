@@ -6,6 +6,62 @@ import Rodape from '../componentes/Rodape';
 
 
 class PaginaDoProduto extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            idClassificado: '',
+            classificado: []
+        }
+        this.removerIdDaUrl = this.removerIdDaUrl.bind(this)
+        this.buscarClassificadoPorId = this.buscarClassificadoPorId.bind(this)
+    }
+
+    async componentDidMount(){
+        await this.removerIdDaUrl()
+        this.buscarClassificadoPorId()
+    }
+
+    removerIdDaUrl(){
+        var url = window.location.href
+        var id = url.split('=')[1]
+        this.setState({ idClassificado : id})
+    }
+
+    buscarClassificadoPorId(){
+        fetch('https://localhost:5001/api/classificado/' + this.state.idClassificado, {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": 'Bearer ' + localStorage.getItem('autenticarlogin')
+            }
+        })
+        .then(resposta => resposta.json())  
+        .then(data => {this.setState({classificado : data})
+
+        this.setState({nomeEquipamento : data.idEquipamentoNavigation.nomeEquipamento})
+        this.setState({marca : data.idEquipamentoNavigation.marca})
+        this.setState({modelo : data.idEquipamentoNavigation.modelo})
+        this.setState({sistemaOperacional : data.idEquipamentoNavigation.sistemaOperacional})
+        this.setState({processador : data.idEquipamentoNavigation.processador})
+        this.setState({memoriaRam : data.idEquipamentoNavigation.memoriaRam})
+        this.setState({ssd : data.idEquipamentoNavigation.ssd})
+        this.setState({hd : data.idEquipamentoNavigation.hd})
+        this.setState({placaDeVideo : data.idEquipamentoNavigation.placaDeVideo})
+        this.setState({alimentacao : data.idEquipamentoNavigation.alimentacao})
+        this.setState({peso : data.idEquipamentoNavigation.peso})
+        this.setState({dimensoes : data.idEquipamentoNavigation.dimensoes})
+        this.setState({polegada : data.idEquipamentoNavigation.polegada})
+
+
+
+        this.setState({nomeCategoria : data.idCategoriaNavigation.nomeCategoria})
+        
+
+
+
+        ;console.log(this.state.classificado.idEquipamentoNavigation.nomeEquipamento)}
+             ).catch((erro) => console.log(erro))
+    }
+
 
     render(){
         return(
@@ -25,31 +81,31 @@ class PaginaDoProduto extends Component{
                        <li></li>
                    </ul>
                </div>
+
                <div className="box2">
                    <div className="box2_cap">
-                       <h1 className="box2_cap_titulo">MacBook MLHF2BZ/A Mac OS X El captain...</h1>
-                       <h4 className="box2_cap_cod">Cod.47856749</h4>
-                           <h2 className="box2_cap_preco">R$7.000,00</h2>
+                       <h1 className="box2_cap_titulo">{this.state.nomeEquipamento}</h1>
+                       <h4 className="box2_cap_cod"> Código: {this.state.classificado.codigoClassificado}</h4>
+                           <h2 className="box2_cap_preco">Por: R$ {this.state.classificado.preco}</h2>
                            <button className="box2_cap_button">Registrar interesse</button>
                    </div>
                </div>
+
            </div>
        </section>
        <section className="produto_desc_info">
            <div className="produto_desc">
                <h3>Informações do produto</h3>
-               <div className="produto_desc2">
-                   <h4> MacBook Pro genial em cada toque.</h4>
+               <div className="produto_desc2"  >
+                   <h4 style={{marginBottom:"2em"}}> {this.state.nomeEquipamento} </h4>
 
-                   <p> Ultrafino, superleve e ainda mais rápido e poderoso. O MacBook Pro é tudo isso e muito mais. Ele
-                       tem a tela mais brilhante e colorida em um notebook Mac.
-                       O MacBook Pro é o resultado de ideias inovadoras e está pronto para receber as suas.
+                   <p> 
+                       Categoria {this.state.nomeCategoria}
+                     
                    </p>
-                   <h4>Bateria</h4>
-                   <p> MacBook Pro oferece desempenho ainda maior em um design mais fino. E, mesmo assim, a bateria
-                       dura o dia inteiro: até 10 horas para os modelos de
-                       13 polegadas e 15 polegadas1. Ou seja, você tem a liberdade de assistir, jogar e editar de onde
-                       estiver.
+                    <h4 style={{margin:"1em 0em"}}> Avaliação do estado do produto:</h4>
+                   <p style={{ margin:"1em 0em", color:"red"}}> 
+                     {this.state.classificado.avaliacao} 
                    </p>
 
                    <h4>Imagens meramente ilustrativas.</h4>
@@ -70,68 +126,63 @@ class PaginaDoProduto extends Component{
                        <caption>TITULO</caption>
                        <tr>
                            <td className="subt" colspan="3">Código</td>
-                           <td className="colunafake" colspan="3">1123123</td>
+                           <td className="colunafake" colspan="3">{this.state.classificado.codigoClassificado}</td>
                        </tr>
                        <tr>
                            <td className="subt" colspan="3">Marca</td>
-                           <td className="colunafake" colspan="3">1123123</td>
+                           <td className="colunafake" colspan="3">{this.state.marca}</td>
                        </tr>
                        <tr>
                            <td className="subt" colspan="3">Modelo</td>
-                           <td className="colunafake" colspan="3">1123123</td>
+                           <td className="colunafake" colspan="3"> {this.state.modelo} </td>
                        </tr>
-                       
                            <tr>
                                <td className="subt" colspan="3">Sistema Operacional</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3"> {this.state.sistemaOperacional} </td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">Polegada da Tela</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3"> {this.state.polegada} </td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">Processador</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3"> {this.state.processador} </td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">Memoria RAM</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3"> {this.state.memoriaRam} </td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">SDD</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3">{this.state.ssd}</td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">HD</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3">{this.state.hd}</td>
                            </tr>
                            <tr>
-                               <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="subt" colspan="3">Softwares inclusos</td>
+                               <td className="colunafake" colspan="3">{this.state.classificado.softwaresInclusos}</td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">Placa de video</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3">{this.state.placaDeVideo}</td>
+                           </tr>
+                           <tr>
+                               <td className="subt" colspan="3">Dimensoes</td>
+                               <td className="colunafake" colspan="3">{this.state.dimensoes}</td>
                            </tr>
                            <tr>
                                <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="colunafake" colspan="3">{this.state.ssd}</td>
                            </tr>
                            <tr>
-                               <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="subt" colspan="3">Data de fabricação</td>
+                               <td className="colunafake" colspan="3">{this.state.classificado.dataFabricacao}</td>
                            </tr>
                            <tr>
-                               <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
-                           </tr>
-                           <tr>
-                               <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
-                           </tr>
-                           <tr>
-                               <td className="subt" colspan="3">Código</td>
-                               <td className="colunafake" colspan="3">1123123</td>
+                               <td className="subt" colspan="3">Fora de serviço desde</td>
+                               <td className="colunafake" colspan="3">{this.state.classificado.fimDeVidaUtil}</td>
                            </tr>
 
                    </table>
@@ -139,7 +190,6 @@ class PaginaDoProduto extends Component{
            </div>
        </section>
    </main>
-    <Rodape/>
 </body>
 
 

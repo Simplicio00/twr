@@ -78,7 +78,7 @@ const Rota = (
             
             <Switch>
 
-                <Route exact path ='/' component={Home}/>
+                <Ambos exact path ='/' component={Home}/>
                 <ContriAuth path='/Historico' component= {Historico}/>
                 <ContriAuth path='/Historico de compras' component={HistoricoCompras}/>
                 <ContriAuth path='/Produto' component={PaginaDoProduto}/>                
